@@ -21,3 +21,12 @@ button{
 .buttonsFahrzeugRechts{
     height: 100%;
 }
+
+.buttonTop{
+    margin-top: 7rem;
+}
+
+button{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
