@@ -35,25 +35,74 @@ function Next(){
     if(index < gegenstaende.length -1){
         index++;
         document.getElementById("Geraetename").innerHTML = gegenstaende[index][0];
+        document.getElementById("Aufgabe").innerHTML = "Aufgabe: " + (+index + +1).toString() + "/" + gegenstaende.length.toString();
     } else{
         if(fehler == 0){
-            Swal.fire(
-                'Fehlerfrei',
-                'Du hast alle ' + gegenstaende.length.toString() + ' richtig beantwortet.',
-                'success'
-              )
+            Swal.fire({
+                title: 'Fehlerfrei',
+                text: 'Du hast alle ' + gegenstaende.length.toString() + ' richtig beantwortet.',
+                icon: 'success',
+                timerProgressBar: true,
+                timer: 3500,
+                didOpen: () => {Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                  b.textContent = Swal.getTimerLeft()
+                }, 100)
+              },
+              willClose: () => {
+                clearInterval(timerInterval)
+              }
+            }).then((result) => {
+              /* Read more about handling dismissals below */
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+              }
+            })
         } else if(fehler <= 2){
-            Swal.fire(
-                'Naja',
-                'Du hast ' + fehler.toString() + ' von ' + gegenstaende.length.toString() + ' richtig beantwortet.',
-                'warning'
-              )
+            Swal.fire({
+                title: 'Naja',
+                text: 'Du hast ' + (+gegenstaende.length - +fehler).toString() + ' von ' + gegenstaende.length.toString() + ' richtig beantwortet.',
+                icon: 'warning',
+                timerProgressBar: true,
+                timer: 3500,
+                didOpen: () => {Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                  b.textContent = Swal.getTimerLeft()
+                }, 100)
+              },
+              willClose: () => {
+                clearInterval(timerInterval)
+              }
+            }).then((result) => {
+              /* Read more about handling dismissals below */
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+              }
+            })
         } else if(fehler >= 3){
-            Swal.fire(
-                'Übungsbedarf',
-                'Du hast nur ' + fehler.toString() + ' von ' + gegenstaende.length.toString() + ' richtig beantwortet.',
-                'error'
-              )
+            Swal.fire({
+                title: 'Übungsbedarf',
+                text: 'Du hast nur ' + (+gegenstaende.length - +fehler).toString() + ' von ' + gegenstaende.length.toString() + ' richtig beantwortet.',
+                icon: 'error',
+                timerProgressBar: true,
+                timer: 3500,
+                didOpen: () => {Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                  b.textContent = Swal.getTimerLeft()
+                }, 100)
+              },
+              willClose: () => {
+                clearInterval(timerInterval)
+              }
+            }).then((result) => {
+              /* Read more about handling dismissals below */
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+              }
+            })
         }
         this.startGame();
     }
