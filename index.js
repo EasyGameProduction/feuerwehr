@@ -51,11 +51,11 @@ function fahrzeugChanged(){
 }
 
 function activateRW(){
-    document.getElementById("RW").style.display = "initial";
+    document.getElementById("RW").style.display = "flex";
 }
 
 function activateTLF(){
-    document.getElementById("TLF").style.display = "initial";
+    document.getElementById("TLF").style.display = "flex";
 }
 
 function deactivateRW(){
