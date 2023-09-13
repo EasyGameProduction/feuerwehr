@@ -28,6 +28,7 @@ function startGame(){
     fehler = 0;
     gegenstaende = this.shuffle(gegenstaende);
     document.getElementById("Geraetename").innerHTML = gegenstaende[0][0];
+    document.getElementById("Aufgabe").innerHTML = "Aufgabe: 1/" + gegenstaende.length.toString();
 }
 this.startGame();
 
