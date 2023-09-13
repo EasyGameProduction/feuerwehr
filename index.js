@@ -68,22 +68,70 @@ function deactivateTLF(){
 
 function RW(Gate){
     if(gegenstaende[index][2] == Gate){
-        alert("Richtig");
+        if(gegenstaende[index][4] == ""){
+            //alert("Richtig");
+            Swal.fire(
+                'Richtig',
+                '',
+                'success'
+              )
+        } else{
+            //alert("Richtig, ist außerdem noch auf dem TLF Fach " + gegenstaende[index][4]);
+            Swal.fire(
+                'Richtig',
+                'Zusätzlich in TLF Fach ' + gegenstaende[index][4],
+                'success'
+            )
+        }
     } else if(gegenstaende[index][2] == ""){
-        alert("Falsch! Das richtige Fach war auf dem TLF das Fach " + gegenstaende[index][4]);
+        //alert("Falsch! Das richtige Fach war auf dem TLF das Fach " + gegenstaende[index][4]);
+        Swal.fire(
+            'Falsch!',
+            'Das richtige Fach war auf dem TLF das Fach ' + gegenstaende[index][4],
+            'error'
+          )
     } else{
-        alert("Falsch! Das richtige Fach war auf dem RW das Fach " + gegenstaende[index][2]);
+        //alert("Falsch! Das richtige Fach war auf dem RW das Fach " + gegenstaende[index][2]);
+        Swal.fire(
+            'Falsch!',
+            'Das richtige Fach war auf dem RW das Fach ' + gegenstaende[index][2],
+            'error'
+          )
     }
     this.Next();
 }
 
 function TLF(Gate){
     if(gegenstaende[index][4] == Gate){
-        alert("Richtig");
+        if(gegenstaende[index][2] == ""){
+            //alert("Richtig");
+            Swal.fire(
+                'Richtig',
+                '',
+                'success'
+              )
+        } else{
+            //alert("Richtig, ist außerdem noch auf dem RW Fach " + gegenstaende[index][2]);
+            Swal.fire(
+                'Richtig',
+                'Zusätzlich in RW Fach ' + gegenstaende[index][2],
+                'success'
+            )
+        }
     } else if(gegenstaende[index][4] == ""){
-        alert("Falsch! Das richtige Fach war auf dem RW das Fach " + gegenstaende[index][2]);
+        //alert("Falsch! Das richtige Fach war auf dem RW das Fach " + gegenstaende[index][2]);
+        Swal.fire(
+            'Falsch!',
+            'Das richtige Fach war auf dem RW das Fach ' + gegenstaende[index][2],
+            'error'
+          )
     } else{
-        alert("Falsch! Das richtige Fach war auf dem TLF das Fach " + gegenstaende[index][4]);
+        //alert("Falsch! Das richtige Fach war auf dem TLF das Fach " + gegenstaende[index][4]);
+        Swal.fire(
+            'Falsch!',
+            'Das richtige Fach war auf dem TLF das Fach ' + gegenstaende[index][4],
+            'error'
+          )
     }
     this.Next();
 }
