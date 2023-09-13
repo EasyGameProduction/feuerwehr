@@ -21,9 +21,11 @@ var gegenstaende = [["Trennschleifer", "RW", "G2", "TLF", ""],
 ["Strahlrohre", "RW", "", "TLF", "G6"]];
 
 var index = 0;
+var fehler = 0;
 
 function startGame(){
     index = 0;
+    fehler = 0;
     gegenstaende = this.shuffle(gegenstaende);
     document.getElementById("Geraetename").innerHTML = gegenstaende[0][0];
 }
@@ -34,6 +36,25 @@ function Next(){
         index++;
         document.getElementById("Geraetename").innerHTML = gegenstaende[index][0];
     } else{
+        if(fehler == 0){
+            Swal.fire(
+                'Fehlerfrei',
+                'Du hast alle ' + gegenstaende.length.toString() + ' richtig beantwortet.',
+                'success'
+              )
+        } else if(fehler <= 2){
+            Swal.fire(
+                'Naja',
+                'Du hast ' + fehler.toString() + ' von ' + gegenstaende.length.toString() + ' richtig beantwortet.',
+                'warning'
+              )
+        } else if(fehler >= 3){
+            Swal.fire(
+                'Übungsbedarf',
+                'Du hast nur ' + fehler.toString() + ' von ' + gegenstaende.length.toString() + ' richtig beantwortet.',
+                'error'
+              )
+        }
         this.startGame();
     }
 }
@@ -84,13 +105,15 @@ function RW(Gate){
             )
         }
     } else if(gegenstaende[index][2] == ""){
+        fehler++;
         //alert("Falsch! Das richtige Fach war auf dem TLF das Fach " + gegenstaende[index][4]);
         Swal.fire(
             'Falsch!',
             'Das richtige Fach war auf dem TLF das Fach ' + gegenstaende[index][4],
             'error'
-          )
+        )
     } else{
+        fehler++;
         //alert("Falsch! Das richtige Fach war auf dem RW das Fach " + gegenstaende[index][2]);
         Swal.fire(
             'Falsch!',
@@ -119,6 +142,7 @@ function TLF(Gate){
             )
         }
     } else if(gegenstaende[index][4] == ""){
+        fehler++;
         //alert("Falsch! Das richtige Fach war auf dem RW das Fach " + gegenstaende[index][2]);
         Swal.fire(
             'Falsch!',
@@ -126,6 +150,7 @@ function TLF(Gate){
             'error'
           )
     } else{
+        fehler++;
         //alert("Falsch! Das richtige Fach war auf dem TLF das Fach " + gegenstaende[index][4]);
         Swal.fire(
             'Falsch!',
