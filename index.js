@@ -18,7 +18,12 @@ var gegenstaende = [["Trennschleifer", "RW", "G2", "TLF", ""],
 ["Feuerlöscher", "RW", "G8", "TLF", "G2"],
 ["Kübelspritze", "RW", "", "TLF", "G2"],
 ["Schaumstrahlrohr", "RW", "", "TLF", "G6"],
-["Strahlrohre", "RW", "", "TLF", "G6"]];
+["Strahlrohre", "RW", "", "TLF", "G6"],
+["Warnweste", "RW", "Ma", "TLF", "Ma"],
+["Abschleppseil", "RW", "", "TLF", "Ma"],
+["Verbandkasten", "RW", "", "TLF", "Ma"],
+["Krankentrage", "RW", "", "TLF", "Ma"],
+["Schaufeltrage", "RW", "", "TLF", "Da"]];
 
 var index = 0;
 var fehler = 0;
@@ -28,7 +33,7 @@ function startGame(){
     fehler = 0;
     gegenstaende = this.shuffle(gegenstaende);
     document.getElementById("Geraetename").innerHTML = gegenstaende[0][0];
-    document.getElementById("Aufgabe").innerHTML = "Aufgabe: 1/" + gegenstaende.length.toString();
+    document.getElementById("Aufgabe").innerHTML = "Aufgabe: " + (+index + +1).toString() + "/" + gegenstaende.length.toString();
 }
 this.startGame();
 

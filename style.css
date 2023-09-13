@@ -6,6 +6,10 @@ body{
     text-align: center;
 }
 
+#RW, #TLF{
+    font-family:'Courier New', Courier, monospace !important;
+}
+
 #TLF{
     display:none;
 }
@@ -23,10 +27,14 @@ button{
 }
 
 .buttonTop{
-    margin-top: 7rem;
+    margin-top: 1.5rem;
 }
 
 button{
     padding: 1rem;
     margin-bottom: 1rem;
+}
+
+.mada{
+    margin-bottom: 2rem;
 }
