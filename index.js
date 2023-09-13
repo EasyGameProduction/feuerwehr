@@ -43,7 +43,7 @@ function Next(){
                 text: 'Du hast alle ' + gegenstaende.length.toString() + ' richtig beantwortet.',
                 icon: 'success',
                 timerProgressBar: true,
-                timer: 3500,
+                timer: 4000,
                 didOpen: () => {Swal.showLoading()
                 const b = Swal.getHtmlContainer().querySelector('b')
                 timerInterval = setInterval(() => {
@@ -65,7 +65,7 @@ function Next(){
                 text: 'Du hast ' + (+gegenstaende.length - +fehler).toString() + ' von ' + gegenstaende.length.toString() + ' richtig beantwortet.',
                 icon: 'warning',
                 timerProgressBar: true,
-                timer: 3500,
+                timer: 4000,
                 didOpen: () => {Swal.showLoading()
                 const b = Swal.getHtmlContainer().querySelector('b')
                 timerInterval = setInterval(() => {
@@ -87,7 +87,7 @@ function Next(){
                 text: 'Du hast nur ' + (+gegenstaende.length - +fehler).toString() + ' von ' + gegenstaende.length.toString() + ' richtig beantwortet.',
                 icon: 'error',
                 timerProgressBar: true,
-                timer: 3500,
+                timer: 4000,
                 didOpen: () => {Swal.showLoading()
                 const b = Swal.getHtmlContainer().querySelector('b')
                 timerInterval = setInterval(() => {
