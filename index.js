@@ -235,3 +235,10 @@ function shuffle(array) {
 
     return array;
 }
+
+function showImage(){
+  Swal.fire(
+    'Funktion nicht verfügbar!',
+    'Bilder der Gegenstände wurden noch nicht implementiert!',
+  )
+}

@@ -1,5 +1,9 @@
 body{
     font-family:Arial, Helvetica, sans-serif;
+    background-image: url(hintergrund.jpg) !important;
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    color: white !important;
 }
 
 .Ueberschrift{
@@ -7,34 +11,74 @@ body{
 }
 
 #RW, #TLF{
-    font-family:'Courier New', Courier, monospace !important;
+   /* font-family:'Courier New', Courier, monospace !important; */
+   display: flex; 
+   justify-content: center;
 }
 
 #TLF{
     display:none;
 }
 
-button{
-    display:inline-block;
-}
-
 .buttonsFahrzeugLinks{
     height: 100%;
+    padding-right: 0px !important;
 }
 
 .buttonsFahrzeugRechts{
     height: 100%;
+    padding-left: 0px !important;
 }
 
 .buttonTop{
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
-button{
-    padding: 1rem;
-    margin-bottom: 1rem;
+.fahrzeugButton{
+    display:inline-block;
+    /*width: 3.8rem;*/
+    width: 65%;
+    height: 3.8rem;
+    margin-bottom: 0.15rem !important;
+    font-size: 1.4rem !important;
+}
+
+.buttonRechts{
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    background-color: inherit;
+    color: white;
+    border-left: transparent;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline:none !important;
+}
+
+.buttonLinks {
+    border-left: 3px solid white;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    background-color: inherit;
+    color: white;
+    border-right: transparent;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline:none !important;
 }
 
 .mada{
-    margin-bottom: 2rem;
+    margin-bottom: 2rem !important;
+}
+
+.Fahrzeug{
+    /*height: auto;
+    width: 100% !important;
+    max-width:80% !important;*/
+    height: 25rem;
+    width: auto;
+}
+
+.fahrzeugContainer{
+    padding: 0px !important;
 }
