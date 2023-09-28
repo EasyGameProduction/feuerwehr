@@ -23,7 +23,8 @@ var gegenstaende = [["Trennschleifer", "RW", "G2", "TLF", ""],
 ["Abschleppseil", "RW", "", "TLF", "Ma"],
 ["Verbandkasten", "RW", "", "TLF", "Ma"],
 ["Krankentrage", "RW", "", "TLF", "Ma"],
-["Schaufeltrage", "RW", "", "TLF", "Da"]];
+["Schaufeltrage", "RW", "", "TLF", "Da"],
+["Bolzenschneider", "RW", "", "TLF", "Ma"]];
 
 var index = 0;
 var fehler = 0;
